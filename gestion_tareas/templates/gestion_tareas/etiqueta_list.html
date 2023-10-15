@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Etiquetas</title>
+	</head>
+	<body>
+		{% for etiqueta in etiquetas_mostrar %}
+			<article>
+				<h2><a href="">{{ etiqueta.nombre }}</a></h2>
+			</article>
+		{% endfor %}
+	</body>
+</html>

@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Proyectos</title>
+	</head>
+	<body>
+		{% for proyecto in proyectos_mostrar %}
+			<article>
+				<h2><a href="">{{ proyecto.nombre }}</a></h2>
+				<p>{{ proyecto.descripcion|linebreaksbr }}</p>
+			</article>
+		{% endfor %}
+	</body>
+</html>

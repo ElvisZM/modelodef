@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Asignacion Tarea</title>
+	</head>
+	<body>
+		{% for asignacion in asignaciones_mostrar %}
+			<article>
+				<p>{{ asignacion_tarea.descripcion|linebreaksbr }}</p>
+			</article>
+		{% endfor %}
+	</body>
+</html>

@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Usuarios</title>
+	</head>
+	<body>
+		{% for usuario in usuarios_mostrar %}
+			<article>
+				<h2><a href="">{{ usuario.nombre }}</a></h2>
+			</article>
+		{% endfor %}
+	</body>
+</html>
