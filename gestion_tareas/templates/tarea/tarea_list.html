@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Tareas</title>
+	</head>
+	<body>
+		{% for tarea in tareas_mostrar %}
+			<div>
+				<h2>Titulo: {{ tarea.titulo }} </h2>
+				<h2>Descripcion: {{ tarea.descripcion }} </h2>
+				<h2>Prioridad: {{ tarea.prioridad }} </h2>
+				<h2>Estado: {{ tarea.estado }} </h2>
+				<h2>Completada: {{ tarea.completada }} </h2>
+				<h2>Fecha Creacion: {{ tarea.fecha_creacion }} </h2>
+				<h2>Hora Vencimiento: {{ tarea.hora_vencimiento }} </h2>
+				<h2>Creador: {{ tarea.creador }} </h2>
+				<h2>Usuarios Asignados: {{ tarea.usuarios_asignados }} </h2>
+				<h2>Proyecto: {{ tarea.proyecto }} </h2>
+			</div>
+		{% endfor %}
+	</body>
+</html>

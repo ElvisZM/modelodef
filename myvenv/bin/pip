@@ -1,4 +1,6 @@
-#!/home/zhune/Escritorio/IES_POLIGONO_SUR/DESARROLLO_SERVIDOR/modelodef/myvenv/bin/python
+#!/bin/sh
+'''exec' "/home/alumnado/Escritorio/Desarrollo_Servidor/DJANGO - GIT/EjModelo/modelodef/myvenv/bin/python" "$0" "$@"
+' '''
 # -*- coding: utf-8 -*-
 import re
 import sys

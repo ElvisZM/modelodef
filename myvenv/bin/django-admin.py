@@ -1,4 +1,4 @@
-#!/home/zhune/Escritorio/IES_POLIGONO_SUR/DESARROLLO_SERVIDOR/modelodef/myvenv/bin/python
+#!/home/alumnado/Escritorio/Desarrollo_Servidor/DJANGO - GIT/EjModelo/modelodef/myvenv/bin/python
 # When the django-admin.py deprecation ends, remove this script.
 import warnings
 

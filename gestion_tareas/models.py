@@ -8,8 +8,16 @@ class Usuario(models.Model):
     correo_electronico = models.CharField(max_length=200, unique=True)
     contraseña = models.CharField(max_length=200)
     fecha_registro = models.DateTimeField(default=timezone.now)
-    
-    
+
+class Proyecto(models.Model):
+    nombre = models.CharField(max_length=200)
+    descripcion = models.TextField()
+    duracion_estimada = models.FloatField()
+    fecha_inicio = models.DateField()
+    fecha_finalizacion = models.DateField()
+    proyectos_asignados = models.ManyToManyField(Usuario, related_name="proyectos_asignados")
+    creador_proyecto = models.ForeignKey(Usuario, on_delete=models.CASCADE, related_name="creador_proyecto")
+        
 class Tarea(models.Model):
     titulo = models.CharField(max_length=200)
     descripcion = models.TextField()
@@ -25,17 +33,8 @@ class Tarea(models.Model):
     hora_vencimiento = models.TimeField()
     creador = models.ForeignKey(Usuario, on_delete=models.CASCADE, related_name="creador")
     usuarios_asignados = models.ManyToManyField(Usuario, through='Asignacion_Tarea', related_name="usuarios_asignados")
-    
-class Proyecto(models.Model):
-    nombre = models.CharField(max_length=200)
-    descripcion = models.TextField()
-    duracion_estimada = models.FloatField()
-    fecha_inicio = models.DateField()
-    fecha_finalizacion = models.DateField()
-    proyectos_asignados = models.ManyToManyField(Usuario, related_name="proyectos_asignados")
-    creador_proyecto = models.ForeignKey(Usuario, on_delete=models.CASCADE, related_name="creador_proyecto")
-    tarea = models.ForeignKey(Tarea, on_delete = models.CASCADE)
-    
+    proyecto = models.ForeignKey(Proyecto, on_delete=models.CASCADE)
+        
 class Etiqueta(models.Model):
     nombre = models.CharField(max_length=200, unique=True)
     etiquetas_asociadas = models.ManyToManyField(Tarea)
