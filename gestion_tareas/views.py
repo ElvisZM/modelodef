@@ -10,13 +10,15 @@ def proyecto_list(request):
     proyectos = proyectos.all()
     return render(request, 'proyecto/proyecto_list.html', {'proyectos_mostrar':proyectos})
 
-def tarea_list(request):
+def proyecto_tareas_list(request, proyecto_id):
     tareas = Tarea.objects.select_related("creador", "proyecto").prefetch_related("usuarios_asignados")
+    tareas = tareas.filter(proyecto__id=proyecto_id).order_by("-fecha_creacion")
     return render(request, 'tarea/tarea_list.html', {'tareas_mostrar':tareas})
 
-def usuario_list(request):
-    usuarios = Usuario.objects.all()
-    return render(request, 'gestion_tareas/usuario_list.html', {'usuarios_mostrar':usuarios})
+def usuario_asignado_tarea_list(request, tarea_id):
+    asignaciones = Asignacion_Tarea.objects.filter(tarea__id=tarea_id).order_by('fecha_asignacion')
+    usuarios_asignados = [asignacion.usuario for asignacion in asignaciones]
+    return render(request, 'usuario/usuario_list.html', {'usuarios_mostrar':usuarios_asignados})
 
 def etiqueta_list(request):
     etiquetas = Etiqueta.objects.all()

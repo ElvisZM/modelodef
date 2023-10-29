@@ -7,7 +7,8 @@
         <h2>Listado de enlaces</h2>
         <ul>
             <li><a href="{% url 'proyecto_list' %}">Ejercicio 2: Proyectos</a></li>
-            <li><a href="{% url 'tarea_list' %}">Ejercicio 3: Tareas - Proyecto</a></li>
+            <li><a href="{% url 'tarea_list' %}">Ejercicio 3: Tareas - Proyecto - Fecha Creacion Desc</a></li>
+            <li><a href="{% url 'usuario_list' tarea_id=1 %}">Ejercicio 4: Usuarios - Asignados a Tarea - Fecha Asig Asc</a></li>
         </ul>
     </body>
 </html>

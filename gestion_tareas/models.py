@@ -6,7 +6,7 @@ from django.utils import timezone
 class Usuario(models.Model):
     nombre = models.CharField(max_length=200)
     correo_electronico = models.CharField(max_length=200, unique=True)
-    contraseña = models.CharField(max_length=200)
+    contrasenha = models.CharField(max_length=200)
     fecha_registro = models.DateTimeField(default=timezone.now)
 
 class Proyecto(models.Model):
@@ -21,7 +21,7 @@ class Proyecto(models.Model):
 class Tarea(models.Model):
     titulo = models.CharField(max_length=200)
     descripcion = models.TextField()
-    prioridad = models.IntegerField()
+    prioridad = models.PositiveIntegerField()
     OPCIONES_ESTADO = [
         ("PENDIENTE","PENDIENTE"),
         ("PROGRESO","PROGRESO"),

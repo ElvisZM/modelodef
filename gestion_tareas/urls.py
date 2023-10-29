@@ -6,9 +6,9 @@ urlpatterns = [
     
     path('proyecto/listar', views.proyecto_list, name='proyecto_list'),
     
-    path('tarea/listar', views.tarea_list, name='tarea_list'),
+    path('proyecto/<int:proyecto_id/tareas', views.proyecto_tareas_list, name='tarea_list'),
     
-    path('usuario', views.usuario_list, name='usuario_list'),
+    path('tarea/<int:tarea_id>/usuarios', views.usuario_asignado_tarea_list, name='usuario_list'),
     
     path('etiqueta', views.etiqueta_list, name='etiqueta_list'),
     

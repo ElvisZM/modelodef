@@ -5,9 +5,12 @@
 	</head>
 	<body>
 		{% for usuario in usuarios_mostrar %}
-			<article>
-				<h2><a href="">{{ usuario.nombre }}</a></h2>
-			</article>
+			<div>
+				<h2>Nombre: {{ usuario.nombre }}</h2>
+				<h2>Correo Electronico: {{ usuario.correo_electronico }}</h2>
+				<h2>Contraseña: {{ usuario.contrasenha }}</h2>
+				<h2>Fecha Registro: {{ usuario.fecha_registro }}</h2>
+			</div>
 		{% endfor %}
 	</body>
 </html>
