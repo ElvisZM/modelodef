@@ -6,9 +6,12 @@
 
         <h2>Listado de enlaces</h2>
         <ul>
-            <li><a href="{% url 'proyecto_list' %}">Ejercicio 2: Proyectos</a></li>
-            <li><a href="{% url 'tarea_list' %}">Ejercicio 3: Tareas - Proyecto - Fecha Creacion Desc</a></li>
-            <li><a href="{% url 'usuario_list' tarea_id=1 %}">Ejercicio 4: Usuarios - Asignados a Tarea - Fecha Asig Asc</a></li>
+            <li><a href="{% url 'proyecto_list' %}">Ejercicio 2: Lista Proyectos</a></li>
+            <li><a href="{% url 'tarea_list' proyecto_id=2 %}">Ejercicio 3: Tareas del Proyecto 2 ordenado Fecha Creacion Desc</a></li>
+            <li><a href="{% url 'usuario_list' tarea_id=1 %}">Ejercicio 4: Usuarios Asignados a Tarea 1 ordenado Fecha Asig Asc</a></li>
+            <li><a href="{% url 'tarea_list' 'capital' %}">Ejercicio 5: Tareas con Texto Concreto en Observaciones</a></li>
+            <li><a href="{% url 'proyectos_completados_entre_fechas' '2000-01-01' '2023-01-01' %}">Ejercicio 6: Proyectos Completados entre Fechas</a></li>
+            <li><a href="{% url "ultimo_usuario_comentario_tarea_proyecto" proyecto_id=4 %}">Ejercicio 7: Último usuario comento proyecto</a></li>
         </ul>
     </body>
 </html>
