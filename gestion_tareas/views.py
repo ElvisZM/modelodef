@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from .models import Usuario, Tarea, Proyecto, Etiqueta, Asignacion_Tarea, Comentario
-from datetime import datetime
+from datetime import datetime, date
 
 # Create your views here.
 def index(request):
@@ -46,18 +46,33 @@ def ultimo_usuario_comentario_tarea_proyecto(request, proyecto_id):
         
     return render(request, "comentario/comentario_list.html",{"ultimo_usuario_comentario":ultimo_usuario_comentario})
     
+def comentario_texto_anyo(request, texto_comentario, anyo_comentario):
+    year = anyo_comentario
+    if 1000 <= year <= 9999:
+        fecha_inicio = date(year, 1, 1)
+        fecha_fin = date(year, 12, 31)
+        
+    comentarios = Comentario.objects.select_related("autor", "tarea")
+    comentarios = comentarios.filter(fecha_comentario__range=(fecha_inicio, fecha_fin), contenido__startswith=texto_comentario)
+    return render(request, "comentario/comentario_list.html",{"comentarios_mostrar":comentarios})
     
+def etiqueta_proyecto(request, proyecto_id):
+    proyecto = Proyecto.objects.get(pk=proyecto_id)
+    etiquetas = Etiqueta.objects.filter(etiquetas_asociadas__proyecto=proyecto)
+    return render(request, 'etiqueta/etiqueta_list.html', {'etiquetas_mostrar':etiquetas})
     
+def usuarios_sin_proyecto(request):
+    usuarios = Usuario.objects.filter(proyectos_asignados__isnull=True)
+    return render(request, 'usuario/usuario_list.html', {'usuarios_mostrar':usuarios})
 
+def mi_error_400(request, exception=None):
+    return render(request, 'errores/400.html',None,None,400)
 
-def etiqueta_list(request):
-    etiquetas = Etiqueta.objects.all()
-    return render(request, 'gestion_tareas/etiqueta_list.html', {'etiquetas_mostrar':etiquetas})
+def mi_error_403(request, exception=None):
+    return render(request, 'errores/403.html',None,None,403)
 
-def asignacion_tarea_list(request):
-    asignaciones = Asignacion_Tarea.objects.all()
-    return render(request, 'gestion_tareas/asignacion_tarea_list.html', {'asignaciones_mostrar':asignaciones})
+def mi_error_404(request, exception=None):
+    return render(request, 'errores/404.html',None,None,404)
 
-def comentario_list(request):
-    comentarios = Comentario.objects.all()
-    return render(request, 'gestion_tareas/comentario_list.html', {'comentarios_mostrar':comentarios})
+def mi_error_500(request, exception=None):
+    return render(request, 'errores/500.html',None,None,500)

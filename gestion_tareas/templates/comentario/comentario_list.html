@@ -5,9 +5,13 @@
 	</head>
 	<body>
 		{% for comentario in comentarios_mostrar %}
-			<article>
-				<p>{{ comentario.contenido|linebreaksbr }}</p>
-			</article>
+			<div>
+				<h2>Contenido: {{ comentario.contenido }}</h2>
+				<h2>Fecha: {{ comentario.fecha_comentario }}</h2>
+				<h2>Autor: {{ comentario.autor }}</h2>
+				<h2>Tarea: {{ comentario.tarea }}</h2>
+
+			</div>
 		{% endfor %}
 	</body>
 </html>

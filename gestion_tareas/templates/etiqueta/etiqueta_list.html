@@ -5,9 +5,10 @@
 	</head>
 	<body>
 		{% for etiqueta in etiquetas_mostrar %}
-			<article>
-				<h2><a href="">{{ etiqueta.nombre }}</a></h2>
-			</article>
+			<div>
+				<h2>Nombre: {{ etiqueta.nombre }}</h2>
+				<h2>Etiquetas Asociadas {{ etiqueta.etiquetas_asociadas }}</h2>
+			</div>
 		{% endfor %}
 	</body>
 </html>

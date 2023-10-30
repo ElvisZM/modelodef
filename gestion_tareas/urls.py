@@ -16,11 +16,11 @@ urlpatterns = [
     
     path('proyecto/<int:proyecto_id>/ultimo-usuario-comentario',views.ultimo_usuario_comentario_tarea_proyecto, name='ultimo_usuario_comentario_tarea_proyecto'),
     
+    path('comentario/<str:texto_comentario>/<int:anyo_comentario>',views.comentario_texto_anyo, name='comentario_texto_anyo'),
     
+    path('proyecto/<int:proyecto_id>/etiquetas/',views.etiqueta_proyecto, name='etiqueta_proyecto'),
     
-    path('etiqueta', views.etiqueta_list, name='etiqueta_list'),
+    path('usuario/sin_proyecto',views.usuarios_sin_proyecto, name='usuarios_sin_proyecto'),
     
-    path('asignaciontarea', views.asignacion_tarea_list, name='asignacion_tarea_list'),
-    
-    path('comentario', views.comentario_list, name='comentario_list'),
+
 ]

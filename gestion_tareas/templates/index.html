@@ -12,6 +12,13 @@
             <li><a href="{% url 'tarea_list' 'capital' %}">Ejercicio 5: Tareas con Texto Concreto en Observaciones</a></li>
             <li><a href="{% url 'proyectos_completados_entre_fechas' '2000-01-01' '2023-01-01' %}">Ejercicio 6: Proyectos Completados entre Fechas</a></li>
             <li><a href="{% url "ultimo_usuario_comentario_tarea_proyecto" proyecto_id=4 %}">Ejercicio 7: Último usuario comento proyecto</a></li>
+            <li><a href="{% url "comentario_texto_anyo" texto_comentario="early" anyo_comentario=2023 %}">Ejercicio 8: Comentario empieza por palabra en el año 2020</a></li>
+            <li><a href="{% url "etiqueta_proyecto" proyecto_id=3 %}">Ejercicio 9: Etiquetas usadas en tarea de proyecto 3</a></li>
+            <li><a href="{% url "usuarios_sin_proyecto" %}">Ejercicio 10: Usuarios sin tarea"</a></li>
+
+
+            
+            
         </ul>
     </body>
 </html>
