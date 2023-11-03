@@ -4,6 +4,9 @@
 		<title>Proyectos</title>
 	</head>
 	<body>
+		{% extends "principal.html" %}
+		{% block contenido %}
+
 		{% for proyecto in proyectos_mostrar %}
 			<div>
 				<h2>Nombre: {{ proyecto.nombre }}</a></h2>
@@ -15,5 +18,6 @@
 				<h2>Creador Proyecto: {{ proyecto.creador_proyecto }}</h2>
 			</div>
 		{% endfor %}
+		{% endblock %}
 	</body>
 </html>

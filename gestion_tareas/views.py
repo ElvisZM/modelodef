@@ -1,4 +1,5 @@
 from django.shortcuts import render
+
 from .models import Usuario, Tarea, Proyecto, Etiqueta, Asignacion_Tarea, Comentario
 from datetime import datetime, date
 
@@ -8,6 +9,8 @@ def index(request):
 
 def proyecto_list(request):
     proyectos = Proyecto.objects.select_related("creador_proyecto").prefetch_related("proyectos_asignados")
+    #Por profesor
+    #proyectos = (Proyecto.objects.select_related("creador_proyecto").prefetch_related("proyectos_asignados, Prefetch)
     proyectos = proyectos.all()
     return render(request, 'proyecto/proyecto_list.html', {'proyectos_mostrar':proyectos})
 

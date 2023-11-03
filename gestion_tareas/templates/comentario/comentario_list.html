@@ -4,6 +4,9 @@
 		<title>Comentario</title>
 	</head>
 	<body>
+		{% extends "principal.html" %}
+		{% block contenido %}
+
 		{% for comentario in comentarios_mostrar %}
 			<div>
 				<h2>Contenido: {{ comentario.contenido }}</h2>
@@ -13,5 +16,6 @@
 
 			</div>
 		{% endfor %}
+		{% endblock %}
 	</body>
 </html>

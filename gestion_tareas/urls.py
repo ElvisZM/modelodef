@@ -20,7 +20,7 @@ urlpatterns = [
     
     path('proyecto/<int:proyecto_id>/etiquetas/',views.etiqueta_proyecto, name='etiqueta_proyecto'),
     
-    path('usuario/sin_proyecto',views.usuarios_sin_proyecto, name='usuarios_sin_proyecto'),
+    path('usuarios_sin_proyecto',views.usuarios_sin_proyecto, name='usuarios_sin_proyecto'),
     
 
 ]

@@ -4,6 +4,8 @@
 		<title>Usuarios</title>
 	</head>
 	<body>
+		{% extends "principal.html" %}
+		{% block contenido %}
 		{% for usuario in usuarios_mostrar %}
 			<div>
 				<h2>Nombre: {{ usuario.nombre }}</h2>
@@ -12,5 +14,6 @@
 				<h2>Fecha Registro: {{ usuario.fecha_registro }}</h2>
 			</div>
 		{% endfor %}
+		{% endblock %}
 	</body>
 </html>

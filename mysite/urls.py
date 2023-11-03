@@ -20,7 +20,7 @@ from gestion_tareas import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('gestion_tareas.urls')),
-    
+    path("__debug__/", include('debug_toolbar.urls')),
 ]
 
 handler400 = 'gestion_tareas.views.mi_error_400'

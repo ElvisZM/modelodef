@@ -1,0 +1,26 @@
+/* Estilo básico para el menú de navegación */
+.menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    background-color: white;
+}
+
+.menu ul li {
+    display: flex;
+    margin-right: 20px; /* Espacio entre elementos del menú */
+    background-color: red;
+}
+
+.menu ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+/* Estilo para el contenedor principal */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

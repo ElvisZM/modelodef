@@ -4,11 +4,15 @@
 		<title>Etiquetas</title>
 	</head>
 	<body>
+		{% extends "principal.html" %}
+		{% block contenido %}
+
 		{% for etiqueta in etiquetas_mostrar %}
 			<div>
 				<h2>Nombre: {{ etiqueta.nombre }}</h2>
 				<h2>Etiquetas Asociadas {{ etiqueta.etiquetas_asociadas }}</h2>
 			</div>
 		{% endfor %}
+		{% endblock %}
 	</body>
 </html>

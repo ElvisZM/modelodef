@@ -4,10 +4,17 @@
 		<title>Asignacion Tarea</title>
 	</head>
 	<body>
+		{% extends "principal.html" %}
+		{% block contenido %}
+
 		{% for asignacion in asignaciones_mostrar %}
-			<article>
-				<p>{{ asignacion_tarea.descripcion|linebreaksbr }}</p>
-			</article>
+			<div>
+				<h2>Usuario: {{ asignacion_tarea.usuario }}</h2>
+				<h2>Tarea: {{ asignacion_tarea.tarea }}</h2>
+				<h2>Observaciones: {{ asignacion.observaciones }}</h2>
+				<h2>Fecha: {{ asignacion.fecha_asignacion }}</h2>
+			</div>
 		{% endfor %}
+		{% endblock %}
 	</body>
 </html>

@@ -4,6 +4,9 @@
 		<title>Tareas</title>
 	</head>
 	<body>
+		{% extends "principal.html" %}
+		{% block contenido %}
+
 		{% for tarea in tareas_mostrar %}
 			<div>
 				<h2>Titulo: {{ tarea.titulo }} </h2>
@@ -18,5 +21,6 @@
 				<h2>Proyecto: {{ tarea.proyecto }} </h2>
 			</div>
 		{% endfor %}
+		{% endblock %}
 	</body>
 </html>

@@ -1,0 +1,16 @@
+
+{% block contenido %}
+<div class="menu">
+    <ul>
+        <li><a href="{% url 'proyecto_list' %}">Proyectos</a></li>
+        <li><a href="{% url 'tarea_list' proyecto_id=3 %}">Tareas Proyecto 3 Fecha_Crea Desc</a></li>
+        <li><a href="{% url 'usuario_list' tarea_id=1 %}">Usuarios Asignados a Tarea 1 ordenado Fecha Asig Asc</a></li>
+        <li><a href="{% url 'tarea_list' texto_tarea="second" %}">Tareas con Texto "second" en Observaciones</a></li>
+        <li><a href="{% url 'proyectos_completados_entre_fechas' '2000-01-01' '2023-01-01' %}">Proyectos Completados entre Fechas</a></li>
+        <li><a href="{% url "ultimo_usuario_comentario_tarea_proyecto" proyecto_id=4 %}">Último usuario comento proyecto 4</a></li>
+        <li><a href="{% url "comentario_texto_anyo" texto_comentario="early" anyo_comentario=2023 %}">Comentario empieza por palabra "early" en el año 2023</a></li>
+        <li><a href="{% url "etiqueta_proyecto" proyecto_id=3 %}">Etiquetas usadas en tarea de proyecto 3</a></li>
+        <li><a href="{% url "usuarios_sin_proyecto" %}">Usuarios sin tarea</a></li>
+    </ul>
+</div>
+{% endblock %}
