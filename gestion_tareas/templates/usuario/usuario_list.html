@@ -1,19 +1,8 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		<title>Usuarios</title>
-	</head>
-	<body>
-		{% extends "principal.html" %}
-		{% block contenido %}
-		{% for usuario in usuarios_mostrar %}
-			<div>
-				<h2>Nombre: {{ usuario.nombre }}</h2>
-				<h2>Correo Electronico: {{ usuario.correo_electronico }}</h2>
-				<h2>Contraseña: {{ usuario.contrasenha }}</h2>
-				<h2>Fecha Registro: {{ usuario.fecha_registro }}</h2>
-			</div>
-		{% endfor %}
-		{% endblock %}
-	</body>
-</html>
+{% extends "principal.html" %}
+{% block contenido %}
+	{% for usuario in usuarios_mostrar %}
+		{% include "usuario/usuario.html" %}
+	{% empty %}
+		<h2>Lo sentimos, no hay usuarios que mostrar.</h2>	
+	{% endfor %}
+{% endblock %}

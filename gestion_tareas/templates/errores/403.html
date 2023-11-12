@@ -1,14 +1,7 @@
-<!DOCTYPE html>
-<html>
-    <head></head>
-    <body>
-        {% extends "principal.html" %}
-        {% block contenido %}
-
-        <h1>Página 403 - Prohibido</h1>
-        <div>
-            <h1> El servidor ha entendido la solicitud, pero no la procesará porque el cliente no tiene permiso para acceder al recurso.</h1>
-        </div>
-        {% endblock %}
-    </body>
-</html> 
+{% extends "principal.html" %}
+{% block contenido %}
+    <h1>Página 403 - Prohibido</h1>
+    <div>
+        <h1> El servidor ha entendido la solicitud, pero no la procesará porque el cliente no tiene permiso para acceder al recurso.</h1>
+    </div>
+{% endblock %}

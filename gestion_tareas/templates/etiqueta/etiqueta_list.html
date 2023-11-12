@@ -1,18 +1,8 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		<title>Etiquetas</title>
-	</head>
-	<body>
-		{% extends "principal.html" %}
-		{% block contenido %}
-
-		{% for etiqueta in etiquetas_mostrar %}
-			<div>
-				<h2>Nombre: {{ etiqueta.nombre }}</h2>
-				<h2>Etiquetas Asociadas {{ etiqueta.etiquetas_asociadas }}</h2>
-			</div>
-		{% endfor %}
-		{% endblock %}
-	</body>
-</html>
+{% extends "principal.html" %}
+{% block contenido %}
+	{% for etiqueta in etiquetas_mostrar %}
+		{% include "etiqueta/etiqueta.html" %}
+	{% empty %}
+		<h2>Lo sentimos, no hay etiquetas asociadas a la tarea de este proyecto.</h1>
+	{% endfor %}
+{% endblock %}

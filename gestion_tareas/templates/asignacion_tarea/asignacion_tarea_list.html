@@ -1,20 +1,8 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		<title>Asignacion Tarea</title>
-	</head>
-	<body>
-		{% extends "principal.html" %}
-		{% block contenido %}
-
-		{% for asignacion in asignaciones_mostrar %}
-			<div>
-				<h2>Usuario: {{ asignacion_tarea.usuario }}</h2>
-				<h2>Tarea: {{ asignacion_tarea.tarea }}</h2>
-				<h2>Observaciones: {{ asignacion.observaciones }}</h2>
-				<h2>Fecha: {{ asignacion.fecha_asignacion }}</h2>
-			</div>
-		{% endfor %}
-		{% endblock %}
-	</body>
-</html>
+{% extends "principal.html" %}
+{% block contenido %}
+	{% for asignacion in asignaciones_mostrar %}
+		{% include "asignacion_tarea/asignacion_tarea.html" %}
+	{% empty %}
+		<h2>Lo sentimos, no hay tareas asignadas que mostrar.</h2>
+	{% endfor %}
+{% endblock %}

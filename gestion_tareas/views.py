@@ -5,7 +5,7 @@ from datetime import datetime, date
 
 # Create your views here.
 def index(request):
-    return render(request, 'index.html')
+    return render(request, 'principal.html')
 
 def proyecto_list(request):
     proyectos = Proyecto.objects.select_related("creador_proyecto").prefetch_related("proyectos_asignados")

@@ -1,26 +1,65 @@
 /* Estilo básico para el menú de navegación */
-.menu ul {
-    list-style: none;
+*{
+    text-decoration: none;
     margin: 0;
     padding: 0;
-    background-color: white;
 }
 
-.menu ul li {
+img{
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+}
+
+h2{
+    width: 90%;
+    text-align: left;
+    margin: 20px auto;
+}
+
+h1{
+    width: 90%;
+    text-align: center;
+    margin: 20px auto;
+}
+
+.menu{
+    width: 90%;
+    height: 200px;
+    margin: 20px auto;
+}
+
+.menu ul {
     display: flex;
-    margin-right: 20px; /* Espacio entre elementos del menú */
-    background-color: red;
-}
-
-.menu ul li a {
-    text-decoration: none;
-    color: #333;
-    font-weight: bold;
-}
-
-/* Estilo para el contenedor principal */
-.container {
-    display: flex;
-    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    list-style: none;
     align-items: center;
+    height: 100%;
+}
+
+.menu a{
+    text-transform: uppercase;
+    padding: 15px;
+    color:black;
+}
+
+.menu a:hover{
+    background-color: red;
+    color: white;
+}
+
+.pie {
+    display: block;
+    text-transform: uppercase;
+    color: black;
+    width: 90%;
+    margin: 20px auto;
+    text-align: center;
+    height: 50px;
+    line-height: 50px;
+    background-color: red;
+    color: white;
+
 }

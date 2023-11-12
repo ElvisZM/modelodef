@@ -1,0 +1,9 @@
+<div>
+    <h2>Nombre: {{ proyecto.nombre|random }}</a></h2> {#Con este template filter me devuelve aleatoriamente una letra del contenido #}
+    <h2>Descripción: {{ proyecto.descripcion|wordcount }}</h2> {# Con este template filter me devuelve el numero de palabras que tiene el texto #}
+    <h2>Duración Estimada: {{ proyecto.duracion_estimada }}</h2>
+    <h2>Fecha Inicio: {{ proyecto.fecha_inicio|date:"m-d-Y" }}</h2> {# Con este template filter formateo la fecha de modo que aparezca primero el mes, dia y año #}
+    <h2>Fecha Finalizacion: {{ proyecto.fecha_finalizacion|date:"m-d-Y" }}</h2>
+    <h2>Proyectos Asignados: {{ proyecto.proyectos_asignados }}</h2>
+    <h2>Creador Proyecto: {{ proyecto.creador_proyecto }}</h2>
+</div>

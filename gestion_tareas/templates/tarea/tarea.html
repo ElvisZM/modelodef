@@ -1,0 +1,12 @@
+<div>
+    <h2>Titulo: {{ tarea.titulo|truncatewords:2 }} </h2> {# Con este template filter indico que solo me muestre dos palabras del contenido que tenga #}
+    <h2>Descripcion: {{ tarea.descripcion }} </h2>
+    <h2>Prioridad: {{ tarea.prioridad|get_digit:"2" }} </h2> {#Con este template filter obtengo el segundo digito empezando siempre por el final #}
+    <h2>Estado: {{ tarea.estado|lower|capfirst }} </h2> {#Con esto puedo concatenar dos template filter donde primero convierto el texto en minuscula y luego convierto la primera letra en mayuscula. #}
+    <h2>Completada: {{ tarea.completada }} </h2>
+    <h2>Fecha Creacion: {{ tarea.fecha_creacion|date:"Y-m-d" }} </h2> {# Con esto formateo mi fecha para que primero me muestre el año, mes y dia #}
+    <h2>Hora Vencimiento: {{ tarea.hora_vencimiento|time:"H\h i\m" }} </h2> {# Con este template filter indico que mi hora aparezca su hora con una h y sus minutos con m #}
+    <h2>Creador: {{ tarea.creador }} </h2>
+    <h2>Usuarios Asignados: {{ tarea.usuarios_asignados }} </h2>
+    <h2>Proyecto: {{ tarea.proyecto }} </h2>
+</div>

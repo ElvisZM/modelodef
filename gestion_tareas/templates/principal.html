@@ -7,12 +7,19 @@
         <script src="{% static 'javascript/myjavascript.js' %}"></script>
     </head>
     <body>
-        <h2>PAGINA PRINCIPAL</h2>
+        <a href="{% url 'principal.html' %}">
+            <img src="{% static 'imagenes/LogoGestionTareas.jpg' %}" alt="Imagen de Django">
+        </a>    
+        <div class="titulo">
+            <h1>PAGINA PRINCIPAL: GESTION DE TAREAS</h2>
+        </div>
 
         {% include "estructura/nav.html" %}
 
         {% block contenido%}
         {% endblock %}
+
+        {% include "estructura/piepagina.html" %}
         
     </body>
 </html>

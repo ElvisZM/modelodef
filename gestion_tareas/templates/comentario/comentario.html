@@ -1,0 +1,10 @@
+<div>
+    {% if ultimo_usuario_comentario %}
+        <h2>Nombre del autor: {{ ultimo_usuario_comentario.nombre }}</h2>
+        <h2>Correo Electronico: {{ ultimo_usuario_comentario.correo_electronico }}</h2>
+
+    {% else %}
+        <h2>Lo sentimos, ningún usuario ha comentado este proyecto.</h2>
+    
+    {% endif %}
+</div>
